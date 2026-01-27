@@ -13,10 +13,10 @@ namespace Session1Try6.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SessionOneTry5Entities : DbContext
+    public partial class SessionOneTry5Entities2 : DbContext
     {
-        public SessionOneTry5Entities()
-            : base("name=SessionOneTry5Entities")
+        public SessionOneTry5Entities2()
+            : base("name=SessionOneTry5Entities2")
         {
         }
     
@@ -25,7 +25,20 @@ namespace Session1Try6.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<EnterHistory> EnterHistory { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<OrderService> OrderService { get; set; }
+        public virtual DbSet<Organisation> Organisation { get; set; }
+        public virtual DbSet<Recycler> Recycler { get; set; }
+        public virtual DbSet<RecyclerResult> RecyclerResult { get; set; }
+        public virtual DbSet<RecyclerWork> RecyclerWork { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<ServiceComplete> ServiceComplete { get; set; }
+        public virtual DbSet<SocialType> SocialType { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

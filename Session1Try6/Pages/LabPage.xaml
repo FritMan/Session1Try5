@@ -32,7 +32,7 @@
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
             <Button Content="Сформировать отчёты"/>
-            <Button Content="Принять отходы"/>
+            <Button Content="Принять отходы" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -48,5 +48,10 @@ namespace Session1Try6.Pages
             GlobalTimer.Stop();
             timer.Stop();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages2.TakeWastePage());
+        }
     }
 }

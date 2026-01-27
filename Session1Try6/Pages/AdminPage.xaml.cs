@@ -23,31 +23,11 @@ namespace Session1Try6.Pages
     /// </summary>
     public partial class AdminPage : Page
     {
-        private DispatcherTimer timer = new DispatcherTimer { Interval=TimeSpan.FromMilliseconds(10)};
-        private DateTime End = DateTime.Now.AddSeconds(121);
+
         public AdminPage(User user)
         {
             InitializeComponent();
-            timer.Tick += Timer_Tick;
             UserSp.DataContext = user;
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            var res = End - DateTime.Now;
-            TimerLab.Content = res.ToString(@"mm\:ss");
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            GlobalTimer.Start();
-            timer.Start();
-        }
-
-        private void Page_Unloaded(object sender, RoutedEventArgs e)
-        {
-            GlobalTimer.Stop();
-            timer.Stop();
         }
     }
 }

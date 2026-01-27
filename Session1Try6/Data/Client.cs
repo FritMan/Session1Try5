@@ -12,13 +12,12 @@ namespace Session1Try6.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Client()
         {
-            this.EnterHistory = new HashSet<EnterHistory>();
-            this.ServiceComplete = new HashSet<ServiceComplete>();
+            this.Order = new HashSet<Order>();
         }
     
         public int Id { get; set; }
@@ -27,14 +26,25 @@ namespace Session1Try6.Data
         public string Patronimic { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public byte[] Photo { get; set; }
-        public int RoleId { get; set; }
-        public bool IsDeleted { get; set; }
+        public string Guid { get; set; }
+        public string Email { get; set; }
+        public string Social_sec_number { get; set; }
+        public string Ein { get; set; }
+        public Nullable<int> Social_TypeId { get; set; }
+        public string Phone { get; set; }
+        public string Passport_S { get; set; }
+        public string Passport_N { get; set; }
+        public System.DateTime BirthDate { get; set; }
+        public Nullable<int> CountryId { get; set; }
+        public string Ipadress { get; set; }
+        public string Ua { get; set; }
+        public Nullable<bool> IsDeleted { get; set; }
+        public Nullable<int> OrganisationId { get; set; }
     
+        public virtual Country Country { get; set; }
+        public virtual Organisation Organisation { get; set; }
+        public virtual SocialType SocialType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnterHistory> EnterHistory { get; set; }
-        public virtual Role Role { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ServiceComplete> ServiceComplete { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

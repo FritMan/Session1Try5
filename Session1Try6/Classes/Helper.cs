@@ -11,7 +11,7 @@ namespace Session1Try6.Classes
 {
     public static class Helper
     {
-        public static SessionOneTry5Entities Db = new SessionOneTry5Entities();
+        public static SessionOneTry5Entities2 Db = new SessionOneTry5Entities2();
 
         public static DispatcherTimer GlobalTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(60)};
 

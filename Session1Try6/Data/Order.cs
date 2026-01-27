@@ -12,29 +12,24 @@ namespace Session1Try6.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Order()
         {
-            this.EnterHistory = new HashSet<EnterHistory>();
-            this.ServiceComplete = new HashSet<ServiceComplete>();
+            this.OrderService = new HashSet<OrderService>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Patronimic { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public byte[] Photo { get; set; }
-        public int RoleId { get; set; }
+        public int ClientId { get; set; }
+        public System.DateTime DateCreate { get; set; }
+        public int StatusId { get; set; }
         public bool IsDeleted { get; set; }
+        public string Code { get; set; }
     
+        public virtual Client Client { get; set; }
+        public virtual Status Status { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EnterHistory> EnterHistory { get; set; }
-        public virtual Role Role { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ServiceComplete> ServiceComplete { get; set; }
+        public virtual ICollection<OrderService> OrderService { get; set; }
     }
 }

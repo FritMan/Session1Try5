@@ -1,0 +1,27 @@
+﻿<Window x:Class="Session1Try6.Pages2.PdfOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Session1Try6.Pages2"
+        mc:Ignorable="d"
+        Title="PdfOrderWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <ScrollViewer>
+        <StackPanel x:Name="OrderSp">
+            <TextBox Text="{Binding Client.Fio, Mode=OneWay}"/>
+            <TextBox Text="{Binding Client.BirthDate, StringFormat=d}"/>
+            <TextBox Text="{Binding Client.Organisation.Name}"/>
+            <TextBox Text="{Binding Code}"/>
+            <TextBox Text="{Binding DateCreate, StringFormat=d}"/>
+
+            <DataGrid x:Name="ServiceDg" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Service.Name}"/>
+                    <DataGridTextColumn Header="Стоимость" Binding="{Binding Service.Price}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <TextBox x:Name="FinalTb" IsEnabled="False"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
