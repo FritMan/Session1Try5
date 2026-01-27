@@ -1,0 +1,37 @@
+﻿<Page x:Class="Session1Try6.Pages.LabResPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Session1Try6.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Loaded="Page_Loaded" Unloaded="Page_Unloaded"
+      Title="LabResPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" x:Name="UserSp">
+            <Image Source="{Binding Photo}"/>
+            <StackPanel Orientation="Vertical">
+                <Label Content="{Binding Fio}"/>
+                <Label Content="{Binding Role.Name}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Label x:Name="TimerLab" Grid.Column="2"/>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+            <Button Content="Утилизатор"/>
+        </StackPanel>
+    </Grid>
+</Page>
