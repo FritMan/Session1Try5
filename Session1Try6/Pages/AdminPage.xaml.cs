@@ -1,6 +1,7 @@
 ﻿using Session1Try6.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,16 @@ namespace Session1Try6.Pages
         {
             InitializeComponent();
             UserSp.DataContext = user;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           NavigationService.Navigate(new Pages3.HistoryPage());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://rpn.gov.ru/fkko/");
         }
     }
 }

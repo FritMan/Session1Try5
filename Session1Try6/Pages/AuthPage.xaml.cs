@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Session1Try6.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,10 @@ namespace Session1Try6.Pages
                     {
                         NavigationService.Navigate(new LabResPage(user));
                     }
+
+                    EnterHistory enterHistory = new EnterHistory { IsDeleted=false, Sucsessfuly=true, UserId=user.Id, DateTimeEnter =DateTime.Now};
+                    Db.EnterHistory.Add(enterHistory);
+                    Db.SaveChanges();
                 }
                 else
                 {
@@ -92,6 +97,10 @@ namespace Session1Try6.Pages
                         NavigationService.Navigate(new LabResPage(user));
                     }
 
+                    EnterHistory enterHistory = new EnterHistory { IsDeleted = false, Sucsessfuly = true, UserId = user.Id, DateTimeEnter = DateTime.Now };
+                    Db.EnterHistory.Add(enterHistory);
+                    Db.SaveChanges();
+
                     count = 0;
                 }
                 else
@@ -100,6 +109,7 @@ namespace Session1Try6.Pages
                     dispatcherTimer.Interval = TimeSpan.FromSeconds(10);
                     dispatcherTimer.Tick += DispatcherTimer_Tick;
                     dispatcherTimer.Start();
+
                     OkBtn.IsEnabled = false;
                 }
             }

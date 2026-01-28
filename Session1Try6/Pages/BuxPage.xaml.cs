@@ -1,4 +1,5 @@
 ﻿using Session1Try6.Data;
+using Session1Try6.Pages3;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,16 @@ namespace Session1Try6.Pages
             UserSp.DataContext = user;
         }
 
+        private void UrBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OrgBillWindow orgBillWindow = new OrgBillWindow();
+            orgBillWindow.Show();
+        }
 
-
+        private void ClBtn_Click(object sender, RoutedEventArgs e)
+        {
+            BillClientWind billClientWind = new BillClientWind();
+            billClientWind.Show();
+        }
     }
 }

@@ -17,7 +17,8 @@ namespace Session1Try6.Data
         public int Id { get; set; }
         public int UserId { get; set; }
         public System.DateTime DateTimeEnter { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
+        public bool Sucsessfuly { get; set; }
     
         public virtual User User { get; set; }
     }

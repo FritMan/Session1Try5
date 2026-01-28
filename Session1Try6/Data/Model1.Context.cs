@@ -13,10 +13,10 @@ namespace Session1Try6.Data
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SessionOneTry5Entities2 : DbContext
+    public partial class SessionOneTry5Entities6 : DbContext
     {
-        public SessionOneTry5Entities2()
-            : base("name=SessionOneTry5Entities2")
+        public SessionOneTry5Entities6()
+            : base("name=SessionOneTry5Entities6")
         {
         }
     

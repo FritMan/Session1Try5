@@ -32,7 +32,7 @@ namespace Session1Try6.Pages2
 
             PrintDialog printDialog = new PrintDialog();
             printDialog.PrintQueue = new PrintQueue(new PrintServer(), "Microsoft Print to PDF");
-            printDialog.PrintVisual(OrderSp, "");
+            printDialog.PrintVisual(OrderSp, ""); 
 
         }
 

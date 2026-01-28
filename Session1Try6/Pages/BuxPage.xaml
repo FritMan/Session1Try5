@@ -31,8 +31,9 @@
         <Label x:Name="TimerLab" Grid.Column="2"/>
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
-            <Button Content="Просмотреть отчёты"/>
-            <Button Content="Сформироать счёт"/>
+            <Button Content="Просмотреть отчёты" Width="140"/>
+            <Button x:Name="UrBtn" Click="UrBtn_Click" Content="Сформироать счёт Ю.Л." Width="140"/>
+            <Button Content="Сформироать счёт Ч.Л.Г" Width="140" x:Name="ClBtn" Click="ClBtn_Click"/>
  
         </StackPanel>
     </Grid>

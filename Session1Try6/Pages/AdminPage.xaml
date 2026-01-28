@@ -30,8 +30,9 @@
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
             <Button Content="Сформировать отчёты"/>
-            <Button Content="История входа"/>
+            <Button Content="История входа" Click="Button_Click"/>
             <Button Content="Расходники"/>
+            <Button Content="Переход" Click="Button_Click_1"/>
         </StackPanel>
     </Grid>
 </Page>

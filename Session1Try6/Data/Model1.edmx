@@ -45,7 +45,8 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="DateTimeEnter" Type="datetime" Nullable="false" />
-          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="Sucsessfuly" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -167,6 +168,7 @@
           <Property Name="Photo" Type="image" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IpAddress" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <Association Name="FK_Client_Country">
           <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
@@ -475,7 +477,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="DateTimeEnter" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Sucsessfuly" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_EnterHistory_User" FromRole="EnterHistory" ToRole="User" />
         </EntityType>
         <EntityType Name="Order">
@@ -619,6 +622,7 @@
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="RoleId" Type="Int32" Nullable="false" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IpAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="EnterHistory" Relationship="Self.FK_EnterHistory_User" FromRole="User" ToRole="EnterHistory" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="ServiceComplete" Relationship="Self.FK_ServiceComplete_User" FromRole="User" ToRole="ServiceComplete" />
@@ -803,7 +807,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SessionOneTry5Entities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SessionOneTry5Entities6" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Client" EntityType="Self.Client" />
           <EntitySet Name="Country" EntityType="Self.Country" />
           <EntitySet Name="EnterHistory" EntityType="Self.EnterHistory" />
@@ -885,7 +889,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище SessionOneTry5ModelContainer" CdmEntityContainer="SessionOneTry5Entities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SessionOneTry5ModelContainer" CdmEntityContainer="SessionOneTry5Entities6">
           <EntitySetMapping Name="Client">
             <EntityTypeMapping TypeName="SessionOneTry5Model.Client">
               <MappingFragment StoreEntitySet="Client">
@@ -928,6 +932,7 @@
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="DateTimeEnter" ColumnName="DateTimeEnter" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Sucsessfuly" ColumnName="Sucsessfuly" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1061,6 +1066,7 @@
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
