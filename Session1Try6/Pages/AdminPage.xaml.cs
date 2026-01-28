@@ -40,5 +40,10 @@ namespace Session1Try6.Pages
         {
             Process.Start("https://rpn.gov.ru/fkko/");
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages4.GraphMenu());
+        }
     }
 }
